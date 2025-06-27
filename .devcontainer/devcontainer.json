@@ -1,0 +1,25 @@
+{
+    "name": "Laravel Service Repository",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "editorconfig.editorconfig", // エディタを跨いだ共通設定ファイルをVsCodeで実行するのに必要
+                "ms-azuretools.vscode-docker", // VsCodeでのIntelliSenseやタブ補完用
+                "xdebug.php-debug", // デバッガ
+                "bmewburn.vscode-intelephense-client", // PHP インテリセンス
+                "onecentlin.laravel-extension-pack", // Laravel用拡張機能群 https://zenn.dev/na9/articles/23c18a0d2d8ee2#12%E5%80%8B%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%9F%E3%81%A1
+                "spywhere.guides", // インデントを見やすくする
+                "streetsidesoftware.code-spell-checker", // タイポチェック
+                "mosapride.zenkaku", // 全角の強調表示
+                "mhutchie.git-graph", // git
+                "donjayamanne.githistory", // git
+                "dbaeumer.vscode-eslint", // eslint
+                "esbenp.prettier-vscode", // prettier
+                "junstyle.php-cs-fixer"
+            ]
+        }
+    }
+}

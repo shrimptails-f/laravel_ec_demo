@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "composer install",
+            "type": "shell",
+            "command": "composer install"
+        },
+        {
+            "label": "migrate refresh",
+            "type": "shell",
+            "command": "php artisan migrate:fresh --seed"
+        },
+        {
+            "label": "env refresh",
+            "type": "shell",
+            "command": "php artisan config:clear && php artisan config:cache && php artisan config:clear && php artisan cache:clear && php artisan config:clear"
+        },
+        {
+            "label": "generate key",
+            "type": "shell",
+            "command": "php artisan key:generate"
+        },
+        {
+            "label": "chmod bootstrap/cache",
+            "type": "shell",
+            "command": "chmod -R 775 bootstrap/cache && chown -R www-data:www-data bootstrap/cache"
+        },
+        {
+            "label": "storage link",
+            "type": "shell",
+            "command": "php artisan storage:link"
+        },
+        {
+            "label": "npm install",
+            "type": "shell",
+            "command": "npm install"
+        },
+        {
+            "label": "initialize",
+            "type": "shell",
+            "dependsOn": [
+                "composer install",
+                "migrate refresh",
+                "env refresh",
+                "chmod bootstrap/cache",
+                "generate key",
+                "storage link",
+                "npm install",
+            ]
+        },
+    ]
+}

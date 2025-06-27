@@ -1,0 +1,56 @@
+name: Laravel CI
+
+on: [push]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: リポジトリをチェックアウト
+              uses: actions/checkout@v4
+
+            - name: PHP のセットアップ
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.3'
+                  extensions: mbstring, bcmath, pdo_sqlite, xdebug
+                  coverage: none
+
+            - name: Composer のキャッシュ
+              uses: actions/cache@v3
+              with:
+                  path: vendor
+                  key: composer-${{ hashFiles('**/composer.lock') }}
+                  restore-keys: composer-
+
+            - name: 依存関係のインストール
+              run: composer install --prefer-dist --no-progress --no-suggest
+
+            - name: Node.js のセットアップ
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
+
+            - name: 依存関係のインストール(Node.js)
+              run: npm ci
+
+            - name: Vite ビルド
+              run: npm run build
+
+            - name: .env.testing のセットアップ
+              run: |
+                  cp .env.testing .env
+                  touch /tmp/database.sqlite
+
+            - name: アプリキーの生成
+              run: php artisan key:generate
+
+            - name: データベースのマイグレーション
+              run: php artisan migrate --env=testing --force
+
+            - name: SQLite DB ファイルの存在確認
+              run: ls -la /tmp
+
+            - name: テストの実行
+              run: php artisan test

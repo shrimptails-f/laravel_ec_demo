@@ -1,0 +1,130 @@
+{
+    "editor.formatOnSave": true,
+    "editor.wordSeparators": "`~!@#%^&*-=+[{()]}\\|;:'\",.<>/?",
+    "editor.detectIndentation": true,
+    "[json]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[blade]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    },
+    "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+    "prettier.enable": true,
+    "[javascript]": {
+        "editor.wordSeparators": "`~!@#%^&*$=+[{()]}\\|;:'\",.<>?",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[jsx-tags]": {
+        "editor.wordSeparators": "`~!@#%^&*$=+[{()]}\\|;:'\",.<>?",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescript]": {
+        "editor.wordSeparators": "`~!@#%^&*$=+[{()]}\\|;:'\",.<>?",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescriptreact]": {
+        "editor.wordSeparators": "`~!@#%^&*$=+[{()]}\\|;:'\",.<>?",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "bladeFormatter.format.indentSize": 2,
+    "[php]": {
+        "editor.wordSeparators": "`~!@#%^&*-=+[{()]}\\|;:'\",.<>/?",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.tabSize": 4
+    },
+    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.rules": "@PSR12",
+    "php-cs-fixer.config": ".php-cs-fixer.php",
+    "intelephense.diagnostics.enable": true, // 静的解析を有効化
+    "intelephense.diagnostics.undefinedConstants": true, // 未定義の定数を警告
+    "intelephense.diagnostics.undefinedFunctions": true, // 未定義の関数を警告
+    "intelephense.diagnostics.undefinedVariables": true, // 未定義の変数を警告
+    "intelephense.diagnostics.typeErrors": true, // 型エラーを警告
+    "intelephense.telemetry.enabled": false, // テレメトリを無効化
+    "intelephense.completion.insertUseDeclaration": true, // 自動補完時に `use` を追加
+    "intelephense.environment.phpVersion": "8.2",
+    "intelephense.files.associations": ["**/*.php"], // PHP ファイルの関連付け
+    "intelephense.files.exclude": [
+        ".vscode/",
+        "vendor/",
+        "node_modules/",
+        "storage/"
+    ], // 除外フォルダ
+    "intelephense.stubs": [
+        "bcmath",
+        "bz2",
+        "calendar",
+        "Core",
+        "ctype",
+        "curl",
+        "date",
+        "dom",
+        "exif",
+        "fileinfo",
+        "filter",
+        "ftp",
+        "gd",
+        "gettext",
+        "hash",
+        "iconv",
+        "json",
+        "libxml",
+        "mbstring",
+        "mcrypt",
+        "mysqli",
+        "openssl",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "Phar",
+        "posix",
+        "readline",
+        "Reflection",
+        "session",
+        "SimpleXML",
+        "sockets",
+        "sodium",
+        "SPL",
+        "standard",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlwriter",
+        "zip",
+        "zlib"
+    ], // PHP 標準ライブラリの型情報を提供
+    "cSpell.ignoreWords": [
+        // php周り
+        "enctype",
+        "Renderable",
+        "receiveorder",
+        "isset",
+        "strtotime",
+        // blade周り
+        "stylesheet",
+        "endcomponent",
+        "endsection",
+        "endforeach",
+        "endslot",
+        "enderror",
+        "endswitch",
+        "nbsp",
+        "onclick",
+        "endphp",
+        "endfor",
+        "laravel",
+        "inertia",
+        "vite",
+        "inertiajs",
+        "Intelephense",
+        "Assertable",
+    ] // タイポの除外単語設定
+}
