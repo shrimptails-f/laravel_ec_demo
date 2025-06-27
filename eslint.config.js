@@ -30,7 +30,9 @@ export default [
                 version: 'detect', // 自動で React のバージョンを検出
             },
             'import/resolver': {
-                typescript: {}, // TypeScript のパス解決をサポート
+                typescript: {
+                    project: './tsconfig.json',
+                },
             },
         },
         rules: {
